@@ -37,7 +37,6 @@
 		923027D6F2F417AFA2488127 /* BitchatProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229F17B68CFF7AB1BC91C847 /* BitchatProtocol.swift */; };
 		9269B4230187A9EA969BEDB7 /* PasswordProtectedChannelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A1A705AAF9EC21F4354BE /* PasswordProtectedChannelTests.swift */; };
 		92D34E7A07C990C8A815B0CE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08E03AA0C63E97C91749AEC /* ContentView.swift */; };
-		97BC7E9FAB24FFE643DB5EB2 /* bitchatShareExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 61F92EBA29C47C0FCC482F1F /* bitchatShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9C7D287C8E67AAE576A5ECB7 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B378C16594575FCC7F9C75 /* ShareViewController.swift */; };
 		ABAF130D88561F4A646F0430 /* AppInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763E0DBA9492A654FC0CDCB9 /* AppInfoView.swift */; };
 		AD11E46940D742AEAF547EB2 /* AppInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763E0DBA9492A654FC0CDCB9 /* AppInfoView.swift */; };
@@ -66,13 +65,6 @@
 			remoteGlobalIDString = AF077EA0474EDEDE2C72716C;
 			remoteInfo = bitchat_iOS;
 		};
-		DCB3AD9121A64769FAD7BAD0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 475D96681D0EA0AE57A4E06E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 57CA17A36A2532A6CFF367BB;
-			remoteInfo = bitchatShareExtension;
-		};
 		E35E7AF9854A2E72452DD34F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 475D96681D0EA0AE57A4E06E /* Project object */;
@@ -90,17 +82,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		1AE5E5D867B14EFDBE2C8889 /* Embed Foundation Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				97BC7E9FAB24FFE643DB5EB2 /* bitchatShareExtension.appex in Embed Foundation Extensions */,
-			);
-			name = "Embed Foundation Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		B6C356449BAE4E0F650565D1 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -273,12 +254,10 @@
 			buildPhases = (
 				137ABE739BF20ACDDF8CC605 /* Sources */,
 				0214973A876129753D39EB47 /* Resources */,
-				1AE5E5D867B14EFDBE2C8889 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D8120CFFA88B852C3D106FA6 /* PBXTargetDependency */,
 			);
 			name = bitchat_macOS;
 			packageProductDependencies = (
@@ -515,11 +494,6 @@
 			target = 57CA17A36A2532A6CFF367BB /* bitchatShareExtension */;
 			targetProxy = E35E7AF9854A2E72452DD34F /* PBXContainerItemProxy */;
 		};
-		D8120CFFA88B852C3D106FA6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 57CA17A36A2532A6CFF367BB /* bitchatShareExtension */;
-			targetProxy = DCB3AD9121A64769FAD7BAD0 /* PBXContainerItemProxy */;
-		};
 		D8C09F21DB7DC06E8E672C21 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = AF077EA0474EDEDE2C72716C /* bitchat_iOS */;
@@ -601,7 +575,10 @@
 					"@executable_path/../../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = afalk.chat.bitchat.ShareExtension;
+				REGISTER_APP_GROUPS = YES;
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -875,7 +852,10 @@
 					"@executable_path/../../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = afalk.chat.bitchat.ShareExtension;
+				REGISTER_APP_GROUPS = YES;
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
